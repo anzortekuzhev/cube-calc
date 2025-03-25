@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор рассрочки CUBE</title>
+  <style>
+    @font-face {
+      font-family: 'SF Pro Text';
+      src: local('SF Pro Text'), local('San Francisco');
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(90deg, #000000, #737373);
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      max-width: 420px;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 26px;
+      text-align: center;
+    }
+    label {
+      font-size: 14px;
+      display: block;
+      margin-top: 14px;
+      align-self: flex-start;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 30px;
+      border: 2px solid #D9D9D9;
+      background: transparent;
+      color: white;
+    }
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      margin-top: 5px;
+      border-radius: 5px;
+      background: #e8d7c9;
+      outline: none;
+      appearance: none;
+      transition: background 450ms ease-in;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      width: 100%;
+    }
+    .whatsapp-button {
+      margin-top: 20px;
+      background-color: #25D366;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .whatsapp-button img {
+      width: 18px;
+      height: 18px;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Калькулятор рассрочки</h1>
+
+    <label>Стоимость товара (₽):</label>
+    <input type="number" id="price" max="300000" />
+    <input type="range" id="priceRange" min="10000" max="300000" step="1000" />
+
+    <label>Первый взнос (₽):</label>
+    <input type="number" id="down" />
+    <input type="range" id="downRange" min="0" max="300000" step="1000" />
+
+    <label>Срок рассрочки (мес.):</label>
+    <input type="number" id="months" min="1" max="12" />
+    <input type="range" id="monthsRange" min="1" max="12" />
+
+    <div class="result" id="resultBox"></div>
+
+    <a class="whatsapp-button" href="https://wa.me/79627721490" target="_blank">
+      Оставить заявку <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+    </a>
+  </div>
+
+  <script>
+    function getMonthlyRate(months) {
+      return months <= 6 ? 0.06 : 0.07;
+    }
+
+    function format(num) {
+      return Math.round(num / 10) * 10;
+    }
+
+    function updateSliderBackground(slider) {
+      const val = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+      slider.style.background = `linear-gradient(to right, #e8d7c9 0%, #e8d7c9 ${val}%, rgba(232,215,201,0.3) ${val}%, rgba(232,215,201,0.3) 100%)`;
+    }
+
+    function sync(slider, input) {
+      const update = () => {
+        slider.value = input.value;
+        updateSliderBackground(slider);
+        validateDown();
+        calc();
+      };
+      slider.addEventListener('input', () => {
+        input.value = slider.value;
+        updateSliderBackground(slider);
+        validateDown();
+        calc();
+      });
+      input.addEventListener('input', update);
+      updateSliderBackground(slider);
+    }
+
+    function validateDown() {
+      const price = parseFloat(document.getElementById('price').value);
+      const down = document.getElementById('down');
+      const downRange = document.getElementById('downRange');
+      if (!isNaN(price)) {
+        const min = price * 0.3;
+        const max = price;
+        down.min = min;
+        down.max = max;
+        downRange.min = min;
+        downRange.max = max;
+      }
+    }
+
+    function calc() {
+      const price = parseFloat(document.getElementById('price').value);
+      const down = parseFloat(document.getElementById('down').value);
+      const months = parseInt(document.getElementById('months').value);
+      const box = document.getElementById('resultBox');
+      if (!price || !down || !months || down >= price) {
+        box.innerHTML = '';
+        return;
+      }
+      const rate = getMonthlyRate(months);
+      const credit = price - down;
+      const total = credit * (1 + rate * months);
+      const monthly = total / months;
+      const overpay = total - credit;
+      box.innerHTML = `
+        <p><strong>Ежемесячный платёж:</strong> ${format(monthly)} ₽</p>
+        <p><strong>Итоговая сумма:</strong> ${format(total)} ₽</p>
+        <p><strong>Переплата:</strong> ${format(overpay)} ₽</p>
+      `;
+    }
+
+    sync(priceRange, price);
+    sync(downRange, down);
+    sync(monthsRange, months);
+  </script>
+</body>
+</html>
