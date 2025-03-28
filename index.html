@@ -36,7 +36,7 @@
       margin-top: 14px;
       align-self: flex-start;
     }
-    input[type="number"] {
+    input[type="number"], select {
       width: 100%;
       padding: 10px;
       font-size: 14px;
@@ -94,17 +94,119 @@
   <div class="container">
     <h1>Калькулятор рассрочки</h1>
 
+    <label>Выберите товар:</label>
+    <select id="product">
+  <option value="">— Выберите —</option>
+  <optgroup label="Техника Apple">
+  <optgroup label="iPhone">
+    <optgroup label="iPhone 16 Pro">
+      <option value="137900">iPhone 16 Pro 1TB — 137 900 ₽</option>
+      <option value="123900">iPhone 16 Pro 512gb — 123 900 ₽</option>
+      <option value="102900">iPhone 16 Pro 256gb — 102 900 ₽</option>
+      <option value="92900">iPhone 16 Pro 128gb — 92 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 16 Plus">
+      <option value="87900">iPhone 16 Plus 256gb — 87 900 ₽</option>
+      <option value="77900">iPhone 16 Plus 128gb — 77 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 16">
+      <option value="77900">iPhone 16 256gb — 77 900 ₽</option>
+      <option value="67900">iPhone 16 128gb — 67 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 16E">
+      <option value="54900">iPhone 16E 128gb — 54 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 15">
+      <option value="66900">iPhone 15 Plus 128gb — 66 900 ₽</option>
+      <option value="72900">iPhone 15 256gb — 72 900 ₽</option>
+      <option value="61900">iPhone 15 128gb — 61 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 14">
+      <option value="61900">iPhone 14 256gb — 61 900 ₽</option>
+      <option value="54900">iPhone 14 128gb — 54 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 13">
+      <option value="46900">iPhone 13 128gb — 46 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPhone 12">
+      <option value="44900">iPhone 12 128gb — 44 900 ₽</option>
+      <option value="39900">iPhone 12 64gb — 39 900 ₽</option>
+    </optgroup>
+  </optgroup>
+  <optgroup label="iPad">
+    <optgroup label="iPad Pro">
+      <option value="129900">iPad Pro M4 13″ 256gb Cellular — 129 900 ₽</option>
+      <option value="109900">iPad Pro M4 13″ 256gb Wi-Fi — 109 900 ₽</option>
+      <option value="115900">iPad Pro M4 11″ 512gb Wi-Fi — 115 900 ₽</option>
+      <option value="89900">iPad Pro M4 11″ 256gb Wi-Fi — 89 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPad Air">
+      <option value="79900">iPad Air 6 13″ M2 128gb Wi-Fi — 79 900 ₽</option>
+      <option value="66900">iPad Air 6 11″ M2 256gb Wi-Fi — 66 900 ₽</option>
+      <option value="56900">iPad Air 6 11″ M2 128gb Wi-Fi — 56 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPad 10">
+      <option value="47900">iPad 10 256gb Wi-Fi — 47 900 ₽</option>
+      <option value="36900">iPad 10 64gb Wi-Fi — 36 900 ₽</option>
+    </optgroup>
+  </optgroup>
+  <optgroup label="MacBook">
+    <option value="185900">MacBook Pro 14″ M4 Pro 24/512gb — 185 900 ₽</option>
+    <option value="125900">MacBook Air 15″ M3 8/256gb — 125 900 ₽</option>
+    <option value="125900">MacBook Air 13.6″ M3 16/512gb — 125 900 ₽</option>
+    <option value="107900">MacBook Air 13.6″ M3 16/256gb — 107 900 ₽</option>
+    <option value="97900">MacBook Air 13.6″ M3 8/256gb — 97 900 ₽</option>
+    <option value="87900">MacBook Air 13.6″ M2 16/256gb — 87 900 ₽</option>
+    <option value="84900">MacBook Air 13.6″ M2 8/256gb — 84 900 ₽</option>
+    <option value="67900">MacBook Air 13″ M1 8/256gb — 67 900 ₽</option>
+  </optgroup>
+  <optgroup label="iMac">
+    <option value="149900">iMac 24″ на процессоре M4 — от 149 900 ₽</option>
+  </optgroup>
+  <optgroup label="Apple Watch">
+    <option value="74900">Apple Watch Ultra 2 49mm Black — 74 900 ₽</option>
+    <option value="72900">Apple Watch Ultra 2 49mm — 72 900 ₽</option>
+    <option value="39900">Apple Watch 10 46mm — 39 900 ₽</option>
+    <option value="37900">Apple Watch 10 42mm — 37 900 ₽</option>
+    <option value="33900">Apple Watch 9 45mm — 33 900 ₽</option>
+    <option value="31900">Apple Watch 9 41mm — 31 900 ₽</option>
+    <option value="26900">Apple Watch SE 44mm 2024 — 26 900 ₽</option>
+    <option value="24900">Apple Watch SE 40mm 2024 — 24 900 ₽</option>
+    <option value="24900">Apple Watch SE 44mm 2023 — 24 900 ₽</option>
+    <option value="22900">Apple Watch SE 44mm 2022 — 22 900 ₽</option>
+  </optgroup>
+  <optgroup label="AirPods">
+    <option value="49900">AirPods Max 2024 — 49 900 ₽</option>
+    <option value="17900">AirPods 4 ANC — 17 900 ₽</option>
+    <option value="19900">AirPods Pro 2 — 19 900 ₽</option>
+    <option value="13900">AirPods 4 — 13 900 ₽</option>
+    <option value="13900">AirPods 3 — 13 900 ₽</option>
+    <option value="10900">AirPods 2 — 10 900 ₽</option>
+  </optgroup>
+  <optgroup label="Аксессуары">
+    <option value="11900">Apple Magic Mouse 3 — 11 900 ₽</option>
+    <option value="14900">Apple Pencil Pro — 14 900 ₽</option>
+    <option value="10900">Apple Pencil 2 — 10 900 ₽</option>
+    <option value="29900">Apple Magic Keyboard iPad 11″ — 29 900 ₽</option>
+    <option value="33900">Apple Magic Keyboard iPad 13″ — 33 900 ₽</option>
+  </optgroup>
+
+
+  
+</optgroup>
+</select>
+
     <label>Стоимость товара (₽):</label>
-    <input type="number" id="price" max="300000" />
-    <input type="range" id="priceRange" min="10000" max="300000" step="1000" />
+    <input type="number" id="price" max="300000" value="10000" />
+    <input type="range" id="priceRange" min="10000" max="300000" step="1000" value="10000" />
 
     <label>Первый взнос (₽):</label>
-    <input type="number" id="down" />
-    <input type="range" id="downRange" min="0" max="300000" step="1000" />
+    <input type="number" id="down" value="3000" />
+    <input type="range" id="downRange" min="0" max="300000" step="1000" value="3000" />
 
     <label>Срок рассрочки (мес.):</label>
-    <input type="number" id="months" min="1" max="12" />
-    <input type="range" id="monthsRange" min="1" max="12" />
+    <input type="number" id="months" min="1" max="12" value="6" />
+    <input type="range" id="monthsRange" min="1" max="12" value="6" />
 
     <div class="result" id="resultBox"></div>
 
@@ -119,7 +221,12 @@
     }
 
     function format(num) {
-      return Math.round(num / 10) * 10;
+      const rounded = Math.round(num / 10) * 10;
+      return rounded.toLocaleString('ru-RU');
+    }
+
+    function unformat(str) {
+      return parseFloat(str.toString().replace(/\s/g, '')) || 0;
     }
 
     function updateSliderBackground(slider) {
@@ -127,25 +234,31 @@
       slider.style.background = `linear-gradient(to right, #e8d7c9 0%, #e8d7c9 ${val}%, rgba(232,215,201,0.3) ${val}%, rgba(232,215,201,0.3) 100%)`;
     }
 
-    function sync(slider, input) {
+    function sync(slider, input, resetProduct = false) {
       const update = () => {
-        slider.value = input.value;
+        const rawValue = unformat(input.value);
+        slider.value = rawValue;
+        if (resetProduct) document.getElementById('product').value = "";
         updateSliderBackground(slider);
         validateDown();
         calc();
       };
       slider.addEventListener('input', () => {
         input.value = slider.value;
+        if (resetProduct) document.getElementById('product').value = "";
         updateSliderBackground(slider);
         validateDown();
         calc();
       });
       input.addEventListener('input', update);
+      input.addEventListener('blur', () => {
+        input.value = format(unformat(input.value));
+      });
       updateSliderBackground(slider);
     }
 
     function validateDown() {
-      const price = parseFloat(document.getElementById('price').value);
+      const price = unformat(document.getElementById('price').value);
       const down = document.getElementById('down');
       const downRange = document.getElementById('downRange');
       if (!isNaN(price)) {
@@ -155,12 +268,20 @@
         down.max = max;
         downRange.min = min;
         downRange.max = max;
+        
+        // Обновим значение первого взноса, если оно меньше минимума
+        if (parseFloat(down.value) < min) {
+          down.value = min;
+          downRange.value = min;
+        }
+
+        updateSliderBackground(downRange);
       }
     }
 
     function calc() {
-      const price = parseFloat(document.getElementById('price').value);
-      const down = parseFloat(document.getElementById('down').value);
+      const price = unformat(document.getElementById('price').value);
+      const down = unformat(document.getElementById('down').value);
       const months = parseInt(document.getElementById('months').value);
       const box = document.getElementById('resultBox');
       if (!price || !down || !months || down >= price) {
@@ -172,16 +293,35 @@
       const total = credit * (1 + rate * months);
       const monthly = total / months;
       const overpay = total - credit;
+      const fullTotal = total + down;
       box.innerHTML = `
         <p><strong>Ежемесячный платёж:</strong> ${format(monthly)} ₽</p>
-        <p><strong>Итоговая сумма:</strong> ${format(total)} ₽</p>
-        <p><strong>Переплата:</strong> ${format(overpay)} ₽</p>
+        <p><strong>Общая стоимость:</strong> ${format(fullTotal)} ₽</p>
+        <p><strong>Торговая наценка:</strong> ${format(overpay)} ₽</p>
       `;
     }
 
-    sync(priceRange, price);
+    const price = document.getElementById('price');
+    const priceRange = document.getElementById('priceRange');
+    const down = document.getElementById('down');
+    const downRange = document.getElementById('downRange');
+    const months = document.getElementById('months');
+    const monthsRange = document.getElementById('monthsRange');
+
+    document.getElementById('product').addEventListener('change', (e) => {
+      if (e.target.value) {
+        price.value = e.target.value;
+        priceRange.value = e.target.value;
+        updateSliderBackground(priceRange);
+        validateDown();
+        calc();
+      }
+    });
+
+    sync(priceRange, price, true);
     sync(downRange, down);
     sync(monthsRange, months);
   </script>
 </body>
 </html>
+
