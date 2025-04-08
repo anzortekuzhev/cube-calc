@@ -94,21 +94,24 @@
   <div class="container">
     <h1>Калькулятор рассрочки</h1>
 
+    <!-- ВСТАВЬ СЮДА ПОЛНЫЙ СПИСОК ТОВАРОВ И ИНПУТЫ ИЗ ТВОЕГО КОДА -->
+    <!-- Я МОГУ ПОДСТАВИТЬ ЕГО, ЕСЛИ НУЖНО -->
+
     <label>Выберите товар:</label>
     <select id="product">
-  <option value="">— Выберите —</option>
-  <optgroup label="Техника Apple">
+      <option value="">— Выберите —</option>
+      <optgroup label="Техника Apple">
   <optgroup label="iPhone">
-  <optgroup label="iPhone 16 Pro Max">
-      <option value="147900">iPhone 16 Pro Max 1TB — 147 900 ₽</option>
-      <option value="127900">iPhone 16 Pro Max 512gb — 127 900 ₽</option>
-      <option value="106900">iPhone 16 Pro Max 256gb — 106 900 ₽</option>
-
+    <optgroup label="iPhone 16 Pro Max">
+      <option value="144900">iPhone 16 Pro Max 1TB — 144 900 ₽</option>
+      <option value="129900">iPhone 16 Pro Max 512gb — 129 900 ₽</option>
+      <option value="109900">iPhone 16 Pro Max 256gb — 109 900 ₽</option>
+    </optgroup>
     <optgroup label="iPhone 16 Pro">
-      <option value="137900">iPhone 16 Pro 1TB — 137 900 ₽</option>
-      <option value="123900">iPhone 16 Pro 512gb — 123 900 ₽</option>
-      <option value="102900">iPhone 16 Pro 256gb — 102 900 ₽</option>
-      <option value="92900">iPhone 16 Pro 128gb — 92 900 ₽</option>
+      <option value="139900">iPhone 16 Pro 1TB — 139 900 ₽</option>
+      <option value="124900">iPhone 16 Pro 512gb — 124 900 ₽</option>
+      <option value="104900">iPhone 16 Pro 256gb — 104 900 ₽</option>
+      <option value="94900">iPhone 16 Pro 128gb — 94 900 ₽</option>
     </optgroup>
     <optgroup label="iPhone 16 Plus">
       <option value="87900">iPhone 16 Plus 256gb — 87 900 ₽</option>
@@ -147,13 +150,19 @@
     </optgroup>
     <optgroup label="iPad Air">
       <option value="79900">iPad Air 6 13″ M2 128gb Wi-Fi — 79 900 ₽</option>
-      <option value="64900">iPad Air 6 11″ M3 128gb Wi-Fi — 64 900 ₽</option>
       <option value="66900">iPad Air 6 11″ M2 256gb Wi-Fi — 66 900 ₽</option>
+      <option value="64900">iPad Air 7 11″ M3 128gb Wi-Fi — 64 900 ₽</option>
       <option value="56900">iPad Air 6 11″ M2 128gb Wi-Fi — 56 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPad 11">
+      <option value="52900">iPad 11 256gb Wi-Fi — 52 900 ₽</option>
     </optgroup>
     <optgroup label="iPad 10">
       <option value="47900">iPad 10 256gb Wi-Fi — 47 900 ₽</option>
       <option value="36900">iPad 10 64gb Wi-Fi — 36 900 ₽</option>
+    </optgroup>
+    <optgroup label="iPad mini 7">
+      <option value="49900">iPad mini 7 128gb Wi-Fi — 49 900 ₽</option>
     </optgroup>
   </optgroup>
   <optgroup label="MacBook">
@@ -170,32 +179,33 @@
   <optgroup label="iMac">
     <option value="149900">iMac 24″ на процессоре M4 — от 149 900 ₽</option>
   </optgroup>
-  <optgroup label="Apple Watch">
-    <option value="74900">Apple Watch Ultra 2 49mm Black — 74 900 ₽</option>
-    <option value="72900">Apple Watch Ultra 2 49mm — 72 900 ₽</option>
-    <option value="39900">Apple Watch 10 46mm — 39 900 ₽</option>
-    <option value="37900">Apple Watch 10 42mm — 37 900 ₽</option>
-    <option value="33900">Apple Watch 9 45mm — 33 900 ₽</option>
-    <option value="26900">Apple Watch SE 44mm 2024 — 26 900 ₽</option>
-    <option value="24900">Apple Watch SE 40mm 2024 — 24 900 ₽</option>
-    <option value="24900">Apple Watch SE 44mm 2023 — 24 900 ₽</option>
-    <option value="22900">Apple Watch SE 44mm 2022 — 22 900 ₽</option>
-  </optgroup>
-  <optgroup label="AirPods">
-    <option value="49900">AirPods Max 2024 — 49 900 ₽</option>
-    <option value="17900">AirPods 4 ANC — 17 900 ₽</option>
-    <option value="19900">AirPods Pro 2 — 19 900 ₽</option>
-    <option value="13900">AirPods 4 — 13 900 ₽</option>
-    <option value="13900">AirPods 3 — 13 900 ₽</option>
-    <option value="10900">AirPods 2 — 10 900 ₽</option>
-  </optgroup>
-  <optgroup label="Аксессуары">
-    <option value="11900">Apple Magic Mouse 3 — 11 900 ₽</option>
-    <option value="14900">Apple Pencil Pro — 14 900 ₽</option>
-    <option value="10900">Apple Pencil 2 — 10 900 ₽</option>
-    <option value="29900">Apple Magic Keyboard iPad 11″ — 29 900 ₽</option>
-    <option value="33900">Apple Magic Keyboard iPad 13″ — 33 900 ₽</option>
-  </optgroup>
+</optgroup>
+<optgroup label="Apple Watch">
+  <option value="74900">Apple Watch Ultra 2 49mm Black — 74 900 ₽</option>
+  <option value="72900">Apple Watch Ultra 2 49mm — 72 900 ₽</option>
+  <option value="39900">Apple Watch 10 46mm — 39 900 ₽</option>
+  <option value="37900">Apple Watch 10 42mm — 37 900 ₽</option>
+  <option value="33900">Apple Watch 9 45mm — 33 900 ₽</option>
+  <option value="26900">Apple Watch SE 44mm 2024 — 26 900 ₽</option>
+  <option value="24900">Apple Watch SE 40mm 2024 — 24 900 ₽</option>
+  <option value="24900">Apple Watch SE 44mm 2023 — 24 900 ₽</option>
+  <option value="22900">Apple Watch SE 44mm 2022 — 22 900 ₽</option>
+</optgroup>
+<optgroup label="AirPods">
+  <option value="49900">AirPods Max 2024 — 49 900 ₽</option>
+  <option value="17900">AirPods 4 ANC — 17 900 ₽</option>
+  <option value="19900">AirPods Pro 2 — 19 900 ₽</option>
+  <option value="13900">AirPods 4 — 13 900 ₽</option>
+  <option value="13900">AirPods 3 — 13 900 ₽</option>
+  <option value="10900">AirPods 2 — 10 900 ₽</option>
+</optgroup>
+<optgroup label="Аксессуары">
+  <option value="11900">Apple Magic Mouse 3 — 11 900 ₽</option>
+  <option value="14900">Apple Pencil Pro — 14 900 ₽</option>
+  <option value="10900">Apple Pencil 2 — 10 900 ₽</option>
+  <option value="29900">Apple Magic Keyboard iPad 11″ — 29 900 ₽</option>
+  <option value="33900">Apple Magic Keyboard iPad 13″ — 33 900 ₽</option>
+</optgroup>
 <optgroup label="Samsung">
   <optgroup label="S-серия">
     <option value="104900">Samsung S25 Ultra 12/512gb — 104 900 ₽</option>
@@ -227,9 +237,9 @@
     <option value="15900">Samsung A16 6/128gb — 15 900 ₽</option>
     <option value="14900">Samsung A16 4/128gb — 14 900 ₽</option>
   </optgroup>
-      
- <optgroup label="Техника Xiaomi">
-   <optgroup label="Poco">
+</optgroup>
+<optgroup label="Техника Xiaomi">
+  <optgroup label="Poco">
     <option value="35900">Poco X7 Pro 12/512gb — 35 900 ₽</option>
     <option value="31900">Poco X7 Pro 8/256gb — 31 900 ₽</option>
     <option value="19900">Poco F4 6/128gb — 19 900 ₽</option>
@@ -238,7 +248,6 @@
     <option value="19900">Poco X5 Pro 6/128gb — 19 900 ₽</option>
     <option value="19900">Poco X5 8/256gb — 19 900 ₽</option>
   </optgroup>
-  
   <optgroup label="Redmi Note 14">
     <option value="34900">Redmi Note 14 Pro Plus 8/256gb — 34 900 ₽</option>
     <option value="29900">Redmi Note 14 Pro 12/512gb — 29 900 ₽</option>
@@ -247,48 +256,55 @@
     <option value="16900">Redmi Note 14 8/128gb — 16 900 ₽</option>
     <option value="14900">Redmi Note 14 6/128gb — 14 900 ₽</option>
   </optgroup>
-
   <optgroup label="Redmi Note 13">
     <option value="24900">Redmi Note 13 Pro 12/256gb — 24 900 ₽</option>
     <option value="19900">Redmi Note 13 Pro 8/256gb — 19 900 ₽</option>
   </optgroup>
-
   <optgroup label="Redmi Note 12 / 11">
     <option value="12900">Redmi Note 12 6/128gb — 12 900 ₽</option>
     <option value="14900">Redmi Note 11 Pro 8/128gb — 14 900 ₽</option>
   </optgroup>
-
   <optgroup label="Redmi 14C">
     <option value="12900">Redmi 14C 8/256gb — 12 900 ₽</option>
     <option value="9900">Redmi 14C 4/128gb — 9 900 ₽</option>
   </optgroup>
-
   <optgroup label="Redmi Pad">
     <option value="29900">Планшет Redmi Pad Pro 12′ 8/256gb — 29 900 ₽</option>
     <option value="18900">Планшет Redmi Pad SE 6/128gb — 18 900 ₽</option>
     <option value="20900">Планшет Redmi Pad SE 8/256gb — 20 900 ₽</option>
     <option value="15900">Планшет Redmi Pad SE 8.7 4/128gb — 15 900 ₽</option>
   </optgroup>
-
- <optgroup label="Бытовая техника и электроника">
+</optgroup>
+<optgroup label="Бытовая техника и электроника">
   <optgroup label="Пылесосы">
     <option value="68900">Беспроводной пылесос Dyson Gen5 Detect Absolute (SV23) — 68 900 ₽</option>
+    <option value="44900">Беспроводной пылесос Roborock Dyad Pro Combo — 44 900 ₽</option>
+    <option value="34900">Беспроводной пылесос Roborock Flexi Pro — 34 900 ₽</option>
+    <option value="26900">Беспроводной пылесос Roborock Flexi Lite — 26 900 ₽</option>
     <option value="22900">Робот-пылесос Xiaomi Robot Vacuum S12 — 22 900 ₽</option>
     <option value="13900">Робот-пылесос Xiaomi Mijia G1 — 13 900 ₽</option>
   </optgroup>
-
   <optgroup label="PlayStation">
     <option value="79900">Sony PlayStation 5 Pro 2TB — 79 900 ₽</option>
     <option value="53900">Sony PlayStation 5 Slim — 53 900 ₽</option>
   </optgroup>
-
   <optgroup label="Укладка и уход Dyson">
-    <option value="45900">Выпрямитель Dyson HT01 — от 45 900 ₽</option>
-    <option value="49900">Стайлер Dyson Complete Long — от 49 900 ₽</option>
+   <optgroup label="Выпрямители Dyson">
+    <option value="49900">Dyson AirStrait HT01 Blue Copper — 49 900 ₽</option>
+    <option value="49900">Dyson AirStrait HT01 Red Velvet Gold — 49 900 ₽</option>
+    <option value="49900">Dyson AirStrait HT01 Ceramic Pink Rose Gold — 49 900 ₽</option>
+    <option value="49900">Dyson AirStrait HT01 Strawberry Bronze Pink — 49 900 ₽</option>
+   <optgroup label="Стайлеры Dyson">
+    <option value="54900">Dyson HSO5 Airwrap Long Nickel Copper — 54 900 ₽</option>
+    <option value="54900">Dyson HSO5 Airwrap Long Blue blush — 54 900 ₽</option>
+    <option value="54900">Dyson HSO5 Airwrap Long Fuchsia Nickel — 54 900 ₽</option>
+    <option value="59900">Dyson HSO5 Airwrap Long Onyx Gold — 59 900 ₽</option>
+    <option value="59900">Dyson HSO5 Airwrap Long Diffuse volumise Blue Copper — 59 900 ₽</option>
+    <option value="59900">Dyson HS08 Airwrap ID Long Vinca blue topaz — 59 900 ₽</option>
+    <option value="64900">Dyson HS08 Airwrap ID Long Jasper Plum Purple — 64 900 ₽</option>
   </optgroup>
-
 </optgroup>
-</select>
+    </select>
 
     <label>Стоимость товара (₽):</label>
     <input type="number" id="price" max="300000" value="10000" />
@@ -304,7 +320,7 @@
 
     <div class="result" id="resultBox"></div>
 
-    <a class="whatsapp-button" href="https://wa.me/79627721490" target="_blank">
+    <a class="whatsapp-button" id="whatsappLink" href="#" target="_blank">
       Оставить заявку <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
     </a>
   </div>
@@ -336,6 +352,7 @@
         updateSliderBackground(slider);
         validateDown();
         calc();
+        updateWhatsAppLink();
       };
       slider.addEventListener('input', () => {
         input.value = slider.value;
@@ -343,24 +360,11 @@
         updateSliderBackground(slider);
         validateDown();
         calc();
+        updateWhatsAppLink();
       });
-      input.addEventListener('input', () => {
-        if (input === months) {
-          if (parseInt(input.value) > 12) input.value = 12;
-          if (parseInt(input.value) < 1) input.value = 1;
-        }
-        update();
-      });
+      input.addEventListener('input', update);
       input.addEventListener('blur', () => {
-        const raw = unformat(input.value);
-        if (input === down) {
-          const min = parseFloat(down.min);
-          if (raw < min) {
-            down.value = min;
-            downRange.value = min;
-          }
-        }
-        input.value = format(raw);
+        input.value = format(unformat(input.value));
       });
       updateSliderBackground(slider);
     }
@@ -376,16 +380,11 @@
         down.max = max;
         downRange.min = min;
         downRange.max = max;
-        
-        // Обновим значение первого взноса, если оно меньше минимума
-        if (parseFloat(down.value) < min && document.activeElement !== down) {
-  down.value = min;
-  downRange.value = min;
-  updateSliderBackground(downRange);
-  down.value = format(down.value);
-  calc();
-  updateWhatsAppLink();
-}
+
+        if (parseFloat(down.value) < min) {
+          down.value = min;
+          downRange.value = min;
+        }
 
         updateSliderBackground(downRange);
       }
@@ -419,6 +418,8 @@
     const downRange = document.getElementById('downRange');
     const months = document.getElementById('months');
     const monthsRange = document.getElementById('monthsRange');
+    const whatsappLink = document.getElementById('whatsappLink');
+    const productSelect = document.getElementById('product');
 
     document.getElementById('product').addEventListener('change', (e) => {
       if (e.target.value) {
@@ -427,12 +428,38 @@
         updateSliderBackground(priceRange);
         validateDown();
         calc();
+        updateWhatsAppLink();
       }
     });
 
     sync(priceRange, price, true);
     sync(downRange, down);
     sync(monthsRange, months);
+
+    function updateWhatsAppLink() {
+      const productText = productSelect.options[productSelect.selectedIndex]?.text || '';
+      const downPayment = unformat(document.getElementById('down').value);
+      const monthsValue = document.getElementById('months').value;
+      const price = unformat(document.getElementById('price').value);
+
+      if (!productText || downPayment <= 0 || !monthsValue) {
+        whatsappLink.href = "https://wa.me/79627721490";
+        return;
+      }
+
+      const rate = getMonthlyRate(parseInt(monthsValue));
+      const credit = price - downPayment;
+      const total = credit * (1 + rate * monthsValue);
+      const monthly = total / monthsValue;
+      const fullTotal = total + downPayment;
+
+      const message = `Ас саламу алайкум! Хочу оформить рассрочку:\n\n📱 Товар: ${productText}\n💰 Первый взнос: ${format(downPayment)} ₽\n📆 Срок: ${monthsValue} мес.\n📤 Платёж в месяц: ${format(monthly)} ₽\n💳 Общая стоимость: ${format(fullTotal)} ₽`;
+
+      const encodedMessage = encodeURIComponent(message);
+      whatsappLink.href = `https://wa.me/79674213434?text=${encodedMessage}`;
+    }
+
+    updateWhatsAppLink();
   </script>
 </body>
 </html>
