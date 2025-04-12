@@ -94,8 +94,6 @@
   <div class="container">
     <h1>Калькулятор рассрочки</h1>
 
-    <!-- ВСТАВЬ СЮДА ПОЛНЫЙ СПИСОК ТОВАРОВ И ИНПУТЫ ИЗ ТВОЕГО КОДА -->
-    <!-- Я МОГУ ПОДСТАВИТЬ ЕГО, ЕСЛИ НУЖНО -->
 
     <label>Выберите товар:</label>
     <select id="product">
@@ -104,8 +102,8 @@
   <optgroup label="iPhone">
     <optgroup label="iPhone 16 Pro Max">
       <option value="144900">iPhone 16 Pro Max 1TB — 144 900 ₽</option>
-      <option value="129900">iPhone 16 Pro Max 512gb — 129 900 ₽</option>
-      <option value="109900">iPhone 16 Pro Max 256gb — 109 900 ₽</option>
+      <option value="134900">iPhone 16 Pro Max 512gb — 134 900 ₽</option>
+      <option value="114900">iPhone 16 Pro Max 256gb — 114 900 ₽</option>
     </optgroup>
     <optgroup label="iPhone 16 Pro">
       <option value="139900">iPhone 16 Pro 1TB — 139 900 ₽</option>
@@ -311,8 +309,13 @@
     <input type="range" id="priceRange" min="10000" max="300000" step="1000" value="10000" />
 
     <label>Первый взнос (₽):</label>
+    <small style="align-self: flex-start; font-size: 12px; opacity: 0.8;">(минимум 30% от суммы)</small>
     <input type="number" id="down" value="3000" />
     <input type="range" id="downRange" min="0" max="300000" step="1000" value="3000" />
+    <div id="downError" style="color: #ff8080; font-size: 13px; margin-top: 4px; display: none;">
+  Первый взнос должен быть не менее 30% от стоимости товара
+</div>
+
 
     <label>Срок рассрочки (мес.):</label>
     <input type="number" id="months" min="1" max="12" value="6" />
@@ -374,7 +377,7 @@
       const down = document.getElementById('down');
       const downRange = document.getElementById('downRange');
       if (!isNaN(price)) {
-        const min = price * 0.3;
+        const min = 0;
         const max = price;
         down.min = min;
         down.max = max;
@@ -442,10 +445,19 @@
       const monthsValue = document.getElementById('months').value;
       const price = unformat(document.getElementById('price').value);
 
-      if (!productText || downPayment <= 0 || !monthsValue) {
-        whatsappLink.href = "https://wa.me/79627721490";
-        return;
-      }
+      const minDown = price * 0.3;
+      const errorBox = document.getElementById('downError');
+      if (!productText || downPayment < minDown || !monthsValue) {
+    whatsappLink.href = "#";
+    if (downPayment < minDown) {
+        errorBox.style.display = "block";
+    } else {
+        errorBox.style.display = "none";
+    }
+    return;
+}
+errorBox.style.display = "none";
+
 
       const rate = getMonthlyRate(parseInt(monthsValue));
       const credit = price - downPayment;
@@ -456,7 +468,7 @@
       const message = `Ас саламу алайкум! Хочу оформить рассрочку:\n\n📱 Товар: ${productText}\n💰 Первый взнос: ${format(downPayment)} ₽\n📆 Срок: ${monthsValue} мес.\n📤 Платёж в месяц: ${format(monthly)} ₽\n💳 Общая стоимость: ${format(fullTotal)} ₽`;
 
       const encodedMessage = encodeURIComponent(message);
-      whatsappLink.href = `https://wa.me/79674213434?text=${encodedMessage}`;
+      whatsappLink.href = `https://wa.me/79627721490?text=${encodedMessage}`;
     }
 
     updateWhatsAppLink();
